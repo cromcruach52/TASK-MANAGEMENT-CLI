@@ -18,7 +18,6 @@ A command-line task management application built with Python and MongoDB.
 
 ```bash
 git clone https://github.com/cromcruach52/TASK-MANAGEMENT-CLI.git
-cd task-management-cli
 ```
 
 ### 2. Install MongoDB
