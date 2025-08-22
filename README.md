@@ -1,4 +1,4 @@
-# Task Management Application
+# TASK-MANAGEMENT-CLI
 
 A command-line task management application built with Python and MongoDB.
 
@@ -15,12 +15,14 @@ A command-line task management application built with Python and MongoDB.
 ## Installation (Windows)
 
 ### 1. Install MongoDB
+
 - Download MongoDB Community Server from [mongodb.com](https://www.mongodb.com/try/download/community)
 - Run the installer and follow the setup wizard
 - MongoDB will run as a Windows service automatically
 
 ### 2. Install Python Dependencies
-\`\`\`bash
+
+```bash
 # Create virtual environment
 python -m venv venv
 
@@ -29,18 +31,25 @@ venv\Scripts\activate
 
 # Install pymongo
 pip install pymongo
-\`\`\`
+```
 
 ### 3. Configure and Run
 
+```bash
 # Set up database
-python scripts/setup_database.py 
+python scripts/setup_database.py
 
 # Run the application
 python main.py
-\`\`\`
+```
 
 ## Usage
 
 Run `python main.py` and use the interactive menu to manage your tasks.
-"# TASK-MANAGEMENT-CLI" 
+
+## Requirements
+
+- Python 3.7+
+- MongoDB Community Server
+- pymongo library
+
