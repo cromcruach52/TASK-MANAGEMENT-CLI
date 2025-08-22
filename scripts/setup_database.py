@@ -1,36 +1,23 @@
+"""
+Database setup script for creating tables and initial data.
+"""
+
 import sys
 import os
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from database.database_config import DatabaseConfig
-from database.db_handler import PostgreSQLHandler, MongoDBHandler
-
-
-def setup_postgresql():
-    """Set up PostgreSQL database and tables."""
-    print("Setting up PostgreSQL database...")
-
-    try:
-        config = DatabaseConfig.get_postgresql_config()
-        handler = PostgreSQLHandler(config)
-
-        if handler.connect():
-            print("✓ PostgreSQL connection successful!")
-            print("✓ Tables created successfully!")
-            handler.close_connection()
-            return True
-        else:
-            print("✗ Failed to connect to PostgreSQL")
-            return False
-
-    except Exception as e:
-        print(f"PostgreSQL setup error: {e}")
-        return False
+from database.db_handler import MongoDBHandler
 
 
 def setup_mongodb():
-    """Set up MongoDB database."""
+    """
+    Set up MongoDB database and test connection.
+
+    Returns:
+        bool: True if setup successful, False otherwise
+    """
     print("Setting up MongoDB database...")
 
     try:
@@ -52,20 +39,17 @@ def setup_mongodb():
 
 
 def main():
-    """Main setup function."""
+    """
+    Main setup function that initializes the database.
+
+    Tests MongoDB connection and prepares the database for use.
+    """
     print("Database Setup Script")
     print("=" * 30)
 
-    db_type = DatabaseConfig.get_database_type()
-    print(f"Database type: {db_type.upper()}")
+    print("Database type: MONGODB")
 
-    if db_type == "postgresql":
-        success = setup_postgresql()
-    elif db_type == "mongodb":
-        success = setup_mongodb()
-    else:
-        print(f"Unsupported database type: {db_type}")
-        success = False
+    success = setup_mongodb()
 
     if success:
         print("\n✓ Database setup completed successfully!")
