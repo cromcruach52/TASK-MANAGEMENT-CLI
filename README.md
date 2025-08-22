@@ -12,6 +12,9 @@ A command-line task management application built with Python and MongoDB.
 - ✅ MongoDB database support
 - ✅ Input validation and error handling
 
+## System Architecture
+![System Flowchart](assets/images/system-flowchart.png)
+
 ## Installation (Windows)
 
 ### 1. Clone the Repository
